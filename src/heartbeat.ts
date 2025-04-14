@@ -14,12 +14,8 @@ export async function sendHeartbeat() {
 		if (!response.ok) {
 			throw new Error(`Network response was not ok: ${response.statusText}`);
 		}
-
-		const result = await response.json();
-		return result;
 	} catch (error) {
 		console.error('Error sending heartbeat:', error);
-		return null;
 	}
 }
 
@@ -37,11 +33,7 @@ export async function sendHeartbeatFailure(error: Error) {
 		if (!response.ok) {
 			throw new Error(`Network response was not ok: ${response.statusText}`);
 		}
-
-		const result = await response.json();
-		return result;
 	} catch (error) {
 		console.error('Error sending heartbeat failure:', error);
-		return null;
 	}
 }
